@@ -1,4 +1,7 @@
 import { StyleSheet, View } from "react-native";
+import BasicArithmeticOperations from "./BasicArithmeticOperations";
+import Numbers from "./Numbers";
+import UtilityButtons from "./UtilityButtons";
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +14,13 @@ const styles = StyleSheet.create({
 });
 
 const ButtonsArea = () => {
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <UtilityButtons />
+      <Numbers />
+      <BasicArithmeticOperations />
+    </View>
+  );
 };
 
 export default ButtonsArea;
