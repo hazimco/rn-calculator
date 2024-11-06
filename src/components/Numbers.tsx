@@ -30,8 +30,13 @@ interface ButtonRowProps {
 }
 
 const ButtonRow = ({ rowList }: ButtonRowProps) => {
+  const styles = StyleSheet.create({
+    container: {
+      flexDirection: "row",
+    },
+  });
   return (
-    <View>
+    <View style={styles.container}>
       {rowList.map((number) => (
         <Button key={number} title={`${number}`} backgroundColor={"#404040"} />
       ))}
