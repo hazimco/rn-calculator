@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderColor: "orange",
+    flex: 4, //because it is four buttons high
   },
 });
 

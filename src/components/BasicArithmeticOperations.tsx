@@ -5,7 +5,7 @@ const operations = ["÷", "×", "+", "-", "="];
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, //because it is one button wide
     borderWidth: 1,
     borderColor: "lime",
   },

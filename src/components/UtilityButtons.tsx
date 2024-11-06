@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderColor: "purple",
+    flex: 1, //because it is one button high
   },
 });
 

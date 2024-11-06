@@ -8,16 +8,23 @@ const styles = StyleSheet.create({
     flex: 3,
     backgroundColor: "black",
 
+    flexDirection: "row",
+
     borderWidth: 1,
     borderColor: "pink",
+  },
+  leftContainer: {
+    flex: 3, //because it is three buttons wide
   },
 });
 
 const ButtonsArea = () => {
   return (
     <View style={styles.container}>
-      <UtilityButtons />
-      <Numbers />
+      <View style={styles.leftContainer}>
+        <UtilityButtons />
+        <Numbers />
+      </View>
       <BasicArithmeticOperations />
     </View>
   );
