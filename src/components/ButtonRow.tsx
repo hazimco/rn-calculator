@@ -28,6 +28,7 @@ const ButtonRow = ({ rowList }: Props) => {
             key={button.title}
             title={`${button.title}`}
             backgroundColor={backgroundColor}
+            textColor={button.type === Type.UTILITY ? "black" : undefined}
           />
         );
       })}
