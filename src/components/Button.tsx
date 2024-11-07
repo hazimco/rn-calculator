@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 36,
   },
+  zeroButton: {
+    width: BUTTON_WIDTH * 2 + BUTTON_MARGIN * 2,
+  },
 });
 
 interface Props {
@@ -31,7 +34,13 @@ interface Props {
 
 const Button = ({ title, backgroundColor, textColor = "white" }: Props) => {
   return (
-    <TouchableOpacity style={[{ backgroundColor }, styles.container]}>
+    <TouchableOpacity
+      style={[
+        { backgroundColor },
+        styles.container,
+        title === "0" && styles.zeroButton,
+      ]}
+    >
       <Text style={[{ color: textColor }, styles.text]}>{title}</Text>
     </TouchableOpacity>
   );
