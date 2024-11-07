@@ -11,8 +11,6 @@ const BUTTON_WIDTH = Dimensions.get("window").width / 4 - BUTTON_MARGIN * 2; // 
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "white",
     borderRadius: 100,
     justifyContent: "center",
     margin: BUTTON_MARGIN,
