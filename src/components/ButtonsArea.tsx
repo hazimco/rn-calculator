@@ -32,7 +32,7 @@ const fourthRow: Button[] = [
 
 const fifthRow: Button[] = [
   { title: "0", type: Type.NUMBER },
-  { title: "1", type: Type.NUMBER },
+  { title: ",", type: Type.NUMBER },
   { title: "=", type: Type.OPERATION },
 ];
 
