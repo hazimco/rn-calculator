@@ -1,35 +1,40 @@
 import { StyleSheet, View } from "react-native";
 import ButtonRow from "./ButtonRow";
+import { Button, Type } from "../types";
 
-const firstRow = [
-  { title: "AC" },
-  { title: "\u207A\u2215\u208B" },
-  { title: "%" },
-  { title: "÷" },
+const firstRow: Button[] = [
+  { title: "AC", type: Type.UTILITY },
+  { title: "\u207A\u2215\u208B", type: Type.UTILITY },
+  { title: "%", type: Type.UTILITY },
+  { title: "÷", type: Type.OPERATION },
 ];
 
-const secondRow = [
-  { title: "7" },
-  { title: "8" },
-  { title: "9" },
-  { title: "×" },
+const secondRow: Button[] = [
+  { title: "7", type: Type.NUMBER },
+  { title: "8", type: Type.NUMBER },
+  { title: "9", type: Type.NUMBER },
+  { title: "×", type: Type.OPERATION },
 ];
 
-const thirdRow = [
-  { title: "4" },
-  { title: "5" },
-  { title: "6" },
-  { title: "-" },
+const thirdRow: Button[] = [
+  { title: "4", type: Type.NUMBER },
+  { title: "5", type: Type.NUMBER },
+  { title: "6", type: Type.NUMBER },
+  { title: "-", type: Type.OPERATION },
 ];
 
-const fourthRow = [
-  { title: "1" },
-  { title: "2" },
-  { title: "3" },
-  { title: "+" },
+const fourthRow: Button[] = [
+  { title: "1", type: Type.NUMBER },
+  { title: "2", type: Type.NUMBER },
+  { title: "3", type: Type.NUMBER },
+  { title: "+", type: Type.OPERATION },
 ];
 
-const fifthRow = [{ title: "0" }, { title: "1" }, { title: "=" }];
+const fifthRow: Button[] = [
+  { title: "0", type: Type.NUMBER },
+  { title: "1", type: Type.NUMBER },
+  { title: "=", type: Type.OPERATION },
+];
 
 const allRows = [firstRow, secondRow, thirdRow, fourthRow, fifthRow];
 
