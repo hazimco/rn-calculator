@@ -40,7 +40,7 @@ const allRows = [firstRow, secondRow, thirdRow, fourthRow, fifthRow];
 
 const styles = StyleSheet.create({
   container: {
-    flex: 3,
+    paddingBottom: 20,
 
     borderWidth: 1,
     borderColor: "pink",
