@@ -11,6 +11,7 @@ export default function App() {
   const handlePress = (button: Button) => {
     switch (button.title) {
       case "AC": {
+        setInput([]);
         break;
       }
       case "%": {
