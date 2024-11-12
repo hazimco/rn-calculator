@@ -1,10 +1,10 @@
 export interface Button {
   title: string;
-  type: Type;
+  style: ButtonStyle;
 }
 
-export enum Type {
-  OPERATION,
-  NUMBER,
-  UTILITY,
+export enum ButtonStyle {
+  OPERATION = "orange",
+  NUMBER = "#404040",
+  UTILITY = "#a0a0a0",
 }

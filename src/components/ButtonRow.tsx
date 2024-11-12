@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import Button from "./Button";
-import { Button as ButtonType, Type } from "../types";
+import { ButtonStyle, Button as ButtonType } from "../types";
 
 interface Props {
   rowList: ButtonType[];
@@ -16,19 +16,12 @@ const ButtonRow = ({ rowList }: Props) => {
   return (
     <View style={styles.container}>
       {rowList.map((button) => {
-        const backgroundColor =
-          button.type === Type.OPERATION
-            ? "orange"
-            : button.type === Type.UTILITY
-            ? "#a0a0a0"
-            : "#404040";
-
         return (
           <Button
             key={button.title}
             title={`${button.title}`}
-            backgroundColor={backgroundColor}
-            textColor={button.type === Type.UTILITY ? "black" : undefined}
+            backgroundColor={button.style}
+            textColor={button.style === ButtonStyle.UTILITY ? "black" : "white"}
           />
         );
       })}
