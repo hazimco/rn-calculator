@@ -47,11 +47,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const ButtonsArea = () => {
+interface Props {
+  onPress: (button: Button) => void;
+}
+
+const ButtonsArea = ({ onPress }: Props) => {
   return (
     <View style={styles.container}>
       {allRows.map((row, index) => (
-        <ButtonRow key={index} rowList={row} />
+        <ButtonRow key={index} rowList={row} onPress={onPress} />
       ))}
     </View>
   );

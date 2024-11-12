@@ -4,9 +4,10 @@ import { ButtonStyle, Button as ButtonType } from "../types";
 
 interface Props {
   rowList: ButtonType[];
+  onPress: (button: ButtonType) => void;
 }
 
-const ButtonRow = ({ rowList }: Props) => {
+const ButtonRow = ({ rowList, onPress }: Props) => {
   const styles = StyleSheet.create({
     container: {
       flexDirection: "row",
@@ -19,9 +20,10 @@ const ButtonRow = ({ rowList }: Props) => {
         return (
           <Button
             key={button.title}
-            title={`${button.title}`}
+            button={button}
             backgroundColor={button.style}
             textColor={button.style === ButtonStyle.UTILITY ? "black" : "white"}
+            onPress={onPress}
           />
         );
       })}
