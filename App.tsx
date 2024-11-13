@@ -5,6 +5,8 @@ import ButtonsArea from "./src/components/ButtonsArea";
 import { useState } from "react";
 import { Button, ButtonStyle } from "./src/types";
 
+const operators = ["÷", "×", "-", "+"];
+
 export default function App() {
   const [input, setInput] = useState<string[]>([]);
 
@@ -33,7 +35,15 @@ export default function App() {
           return;
         }
 
-        // if (["÷","×","-","+"].includes(input.at(-1) ?? ))
+        const lastInputCharacter = input.at(-1) || "";
+
+        if (button.style === ButtonStyle.OPERATION && input.length > 0) {
+          if (!operators.includes(lastInputCharacter)) {
+            setInput([...input, button.title]); //add operator if last character is not an operator
+          } else {
+            setInput(input.with(-1, button.title)); //replace operator if last character is an operator
+          }
+        }
 
         break;
       }
