@@ -35,7 +35,7 @@ const getInputAfterButtonPress = (currentInput: string[], button: Button) => {
     case ButtonStyle.NUMBER: {
       return [...currentInput, button.title];
     }
-    case ButtonStyle.OPERATION: {
+    case ButtonStyle.OPERATOR: {
       return handleOperatorButton(currentInput, button);
     }
     default:

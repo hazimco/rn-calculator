@@ -6,34 +6,34 @@ const firstRow: Button[] = [
   { title: "AC", style: ButtonStyle.UTILITY },
   { title: "\u207A\u2215\u208B", style: ButtonStyle.UTILITY },
   { title: "%", style: ButtonStyle.UTILITY },
-  { title: "÷", style: ButtonStyle.OPERATION },
+  { title: "÷", style: ButtonStyle.OPERATOR },
 ];
 
 const secondRow: Button[] = [
   { title: "7", style: ButtonStyle.NUMBER },
   { title: "8", style: ButtonStyle.NUMBER },
   { title: "9", style: ButtonStyle.NUMBER },
-  { title: "×", style: ButtonStyle.OPERATION },
+  { title: "×", style: ButtonStyle.OPERATOR },
 ];
 
 const thirdRow: Button[] = [
   { title: "4", style: ButtonStyle.NUMBER },
   { title: "5", style: ButtonStyle.NUMBER },
   { title: "6", style: ButtonStyle.NUMBER },
-  { title: "-", style: ButtonStyle.OPERATION },
+  { title: "-", style: ButtonStyle.OPERATOR },
 ];
 
 const fourthRow: Button[] = [
   { title: "1", style: ButtonStyle.NUMBER },
   { title: "2", style: ButtonStyle.NUMBER },
   { title: "3", style: ButtonStyle.NUMBER },
-  { title: "+", style: ButtonStyle.OPERATION },
+  { title: "+", style: ButtonStyle.OPERATOR },
 ];
 
 const fifthRow: Button[] = [
   { title: "0", style: ButtonStyle.NUMBER },
   { title: ",", style: ButtonStyle.NUMBER },
-  { title: "=", style: ButtonStyle.OPERATION },
+  { title: "=", style: ButtonStyle.OPERATOR },
 ];
 
 const allRows = [firstRow, secondRow, thirdRow, fourthRow, fifthRow];

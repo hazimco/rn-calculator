@@ -4,7 +4,7 @@ export interface Button {
 }
 
 export enum ButtonStyle {
-  OPERATION = "orange",
+  OPERATOR = "orange",
   NUMBER = "#404040",
   UTILITY = "#a0a0a0",
 }
