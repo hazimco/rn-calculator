@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import InputArea from "./src/components/InputArea";
 import ButtonsArea from "./src/components/ButtonsArea";
 import { useState } from "react";
@@ -15,7 +15,9 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <InputArea text={input} />
+      <ScrollView>
+        <InputArea text={input} />
+      </ScrollView>
       <ButtonsArea onPress={handlePress} />
       <StatusBar style="light" />
     </SafeAreaView>
