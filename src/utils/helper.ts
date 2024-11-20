@@ -1,6 +1,6 @@
 import { Button, ButtonStyle } from "../types";
 
-const operators = ["÷", "×", "-", "+"];
+const operators = ["÷", "×", "−", "+"];
 
 const handleOperatorButton = (currentInput: string[], button: Button) => {
   if (currentInput.length === 0) return currentInput;

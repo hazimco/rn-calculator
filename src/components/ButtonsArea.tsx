@@ -20,7 +20,7 @@ const thirdRow: Button[] = [
   { title: "4", style: ButtonStyle.NUMBER },
   { title: "5", style: ButtonStyle.NUMBER },
   { title: "6", style: ButtonStyle.NUMBER },
-  { title: "-", style: ButtonStyle.OPERATOR },
+  { title: "−", style: ButtonStyle.OPERATOR },
 ];
 
 const fourthRow: Button[] = [
