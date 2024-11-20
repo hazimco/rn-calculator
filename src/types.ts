@@ -17,5 +17,5 @@ export enum UNICODE {
   DIVISION_SIGN = "\u00F7",
 
   // OTHER
-  PLUS_SLASH_MINUS = "\u207A\u2215\u208B",
+  PLUS_SLASH_MINUS = "\u207A\u2044\u208B",
 }
