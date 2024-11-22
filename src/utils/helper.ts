@@ -1,4 +1,4 @@
-import { Button, ButtonStyle } from "../types";
+import { Button, ButtonStyle, UNICODE } from "../types";
 
 const operators = ["÷", "×", "−", "+"];
 
@@ -56,16 +56,16 @@ const getInputAfterButtonPress = (currentInput: string[], button: Button) => {
     case "AC": {
       return [];
     }
-    case "%": {
+    case UNICODE.PERCENT_SIGN: {
       return currentInput;
     }
-    case "\u207A\u2215\u208B": {
+    case UNICODE.PLUS_SLASH_MINUS: {
       return currentInput;
     }
-    case "=": {
+    case UNICODE.EQUALS_SIGN: {
       return currentInput;
     }
-    case ",": {
+    case UNICODE.COMMA: {
       return handleDecimalButton(currentInput, button);
     }
   }

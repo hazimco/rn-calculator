@@ -18,4 +18,7 @@ export enum UNICODE {
 
   // OTHER
   PLUS_SLASH_MINUS = "\u207A\u2044\u208B",
+  COMMA = "\u002C",
+  EQUALS_SIGN = "\u003D",
+  PERCENT_SIGN = "\u0025",
 }
