@@ -1,12 +1,19 @@
 import { Button, ButtonStyle, UNICODE } from "../types";
 
-const operators = ["÷", "×", "−", "+"];
+const isOperator = (character: string): boolean => {
+  return (
+    character === UNICODE.DIVISION_SIGN ||
+    character === UNICODE.MULTIPLICATION_SIGN ||
+    character === UNICODE.MINUS_SIGN ||
+    character === UNICODE.PLUS_SIGN
+  );
+};
 
 const handleOperatorButton = (currentInput: string[], button: Button) => {
   if (currentInput.length === 0) return currentInput;
 
   const lastInputCharacter = currentInput.at(-1) || "";
-  if (!operators.includes(lastInputCharacter)) {
+  if (!isOperator(lastInputCharacter)) {
     return [...currentInput, button.title]; //add operator if last character is not an operator
   } else {
     return currentInput.with(-1, button.title); //replace operator if last character is an operator
@@ -17,7 +24,7 @@ const handleDecimalButton = (currentInput: string[], button: Button) => {
   const lastInputCharacter = currentInput.at(-1) || "";
 
   // add 0 before decimal that is added when input is empty, or when last input is an operator
-  if (currentInput.length === 0 || operators.includes(lastInputCharacter)) {
+  if (currentInput.length === 0 || isOperator(lastInputCharacter)) {
     return [...currentInput, "0", button.title];
   }
 
@@ -30,13 +37,7 @@ const handleDecimalButton = (currentInput: string[], button: Button) => {
     return [...currentInput, button.title];
   }
 
-  const lastOperatorIndex = currentInput.findLastIndex(
-    (element) =>
-      element === operators[0] ||
-      element === operators[1] ||
-      element === operators[2] ||
-      element === operators[3]
-  );
+  const lastOperatorIndex = currentInput.findLastIndex(isOperator);
 
   /* 
   Values between operators are called operands. "0.1" and "2.3" are operands in "0.1 + 2.3"
