@@ -5,7 +5,7 @@ import { Button, ButtonStyle, UNICODE } from "../types";
 const firstRow: Button[] = [
   { title: "AC", style: ButtonStyle.UTILITY },
   { title: UNICODE.PLUS_SLASH_MINUS, style: ButtonStyle.UTILITY },
-  { title: UNICODE.PERCENT_SIGN, style: ButtonStyle.UTILITY },
+  { title: UNICODE.ERASE_TO_THE_LEFT, style: ButtonStyle.UTILITY },
   { title: UNICODE.DIVISION_SIGN, style: ButtonStyle.OPERATOR },
 ];
 

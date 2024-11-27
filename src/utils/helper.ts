@@ -60,7 +60,7 @@ const getInputAfterButtonPress = (currentInput: string[], button: Button) => {
     case "AC": {
       return [];
     }
-    case UNICODE.PERCENT_SIGN: {
+    case UNICODE.ERASE_TO_THE_LEFT: {
       return currentInput;
     }
     case UNICODE.PLUS_SLASH_MINUS: {

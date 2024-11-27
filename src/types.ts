@@ -20,5 +20,5 @@ export enum UNICODE {
   PLUS_SLASH_MINUS = "\u207A\u2044\u208B",
   COMMA = "\u002C",
   EQUALS_SIGN = "\u003D",
-  PERCENT_SIGN = "\u0025",
+  ERASE_TO_THE_LEFT = "\u232B",
 }
