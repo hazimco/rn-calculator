@@ -13,6 +13,9 @@ const handleOperatorButton = (currentInput: string[], button: Button) => {
   if (currentInput.length === 0) return currentInput;
 
   const lastInputCharacter = currentInput.at(-1) || "";
+  if (lastInputCharacter === UNICODE.COMMA) {
+    return [...currentInput, "0", button.title];
+  }
   if (!isOperator(lastInputCharacter)) {
     return [...currentInput, button.title]; //add operator if last character is not an operator
   } else {
