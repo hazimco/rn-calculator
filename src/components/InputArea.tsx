@@ -14,18 +14,27 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 36,
   },
+  selected: {
+    backgroundColor: "green",
+  },
 });
 
 interface Props {
   text: string[];
+  selectedIndex?: number;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
-const InputArea = ({ text }: Props) => {
+const InputArea = ({ text, selectedIndex, setSelectedIndex }: Props) => {
   return (
     <View style={styles.container}>
       {text.map((t, i) => (
-        <Pressable key={t + i}>
-          <Text style={styles.text}>{t}</Text>
+        <Pressable key={t + i} onPress={() => setSelectedIndex(i)}>
+          <Text
+            style={[styles.text, selectedIndex === i ? styles.selected : null]}
+          >
+            {t}
+          </Text>
         </Pressable>
       ))}
     </View>

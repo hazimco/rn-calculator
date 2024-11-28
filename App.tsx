@@ -8,6 +8,7 @@ import { getInputAfterButtonPress } from "./src/utils/helper";
 
 export default function App() {
   const [input, setInput] = useState<string[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number>();
 
   const scrollViewRef = useRef<ScrollView>(null);
 
@@ -23,7 +24,11 @@ export default function App() {
           scrollViewRef.current?.scrollToEnd({ animated: true });
         }}
       >
-        <InputArea text={input} />
+        <InputArea
+          text={input}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
       </ScrollView>
       <ButtonsArea onPress={handlePress} />
       <StatusBar style="light" />
