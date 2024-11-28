@@ -29,7 +29,12 @@ const InputArea = ({ text, selectedIndex, setSelectedIndex }: Props) => {
   return (
     <View style={styles.container}>
       {text.map((t, i) => (
-        <Pressable key={t + i} onPress={() => setSelectedIndex(i)}>
+        <Pressable
+          key={t + i}
+          onPress={() =>
+            setSelectedIndex((prev) => (prev === i ? undefined : i))
+          }
+        >
           <Text
             style={[styles.text, selectedIndex === i ? styles.selected : null]}
           >
