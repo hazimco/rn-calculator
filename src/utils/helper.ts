@@ -55,13 +55,36 @@ const handleDecimalButton = (currentInput: string[], button: Button) => {
   return currentInput;
 };
 
-const getInputAfterButtonPress = (currentInput: string[], button: Button) => {
+const handleDeleteButton = (
+  currentInput: string[],
+  selectedIndex: number | undefined,
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number | undefined>>
+) => {
+  if (selectedIndex === undefined) return currentInput;
+
+  let updatedInput = currentInput.filter((_, index) => {
+    if (index === selectedIndex) {
+      setSelectedIndex(selectedIndex - 1);
+      return false;
+    }
+    return true;
+  });
+
+  return updatedInput;
+};
+
+const getInputAfterButtonPress = (
+  currentInput: string[],
+  button: Button,
+  selectedIndex: number | undefined,
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number | undefined>>
+) => {
   switch (button.title) {
     case "AC": {
       return [];
     }
     case UNICODE.ERASE_TO_THE_LEFT: {
-      return currentInput;
+      return handleDeleteButton(currentInput, selectedIndex, setSelectedIndex);
     }
     case UNICODE.PLUS_SLASH_MINUS: {
       return currentInput;

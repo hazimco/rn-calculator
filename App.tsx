@@ -13,7 +13,9 @@ export default function App() {
   const scrollViewRef = useRef<ScrollView>(null);
 
   const handlePress = (button: Button) => {
-    setInput(getInputAfterButtonPress(input, button));
+    setInput(
+      getInputAfterButtonPress(input, button, selectedIndex, setSelectedIndex)
+    );
   };
 
   return (
