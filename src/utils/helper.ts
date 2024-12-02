@@ -23,21 +23,21 @@ const handleOperatorButton = (currentInput: string[], buttonTitle: string) => {
   }
 };
 
-const handleDecimalButton = (currentInput: string[], button: Button) => {
+const handleDecimalButton = (currentInput: string[]) => {
   const lastInputCharacter = currentInput.at(-1) || "";
 
   // add 0 before decimal that is added when input is empty, or when last input is an operator
   if (currentInput.length === 0 || isOperator(lastInputCharacter)) {
-    return [...currentInput, "0", button.title];
+    return [...currentInput, "0", UNICODE.COMMA];
   }
 
   const lastDecimalIndex = currentInput.findLastIndex(
-    (element) => element === button.title
+    (element) => element === UNICODE.COMMA
   );
 
   // if there is no decimal, add it
   if (lastDecimalIndex === -1) {
-    return [...currentInput, button.title];
+    return [...currentInput, UNICODE.COMMA];
   }
 
   const lastOperatorIndex = currentInput.findLastIndex(isOperator);
@@ -49,7 +49,7 @@ const handleDecimalButton = (currentInput: string[], button: Button) => {
   only if index of last decimal is less than index of last operator.
   */
   if (lastDecimalIndex < lastOperatorIndex) {
-    return [...currentInput, button.title];
+    return [...currentInput, UNICODE.COMMA];
   }
 
   return currentInput;
@@ -103,7 +103,7 @@ const getInputAfterButtonPress = (
       return currentInput;
     }
     case UNICODE.COMMA: {
-      return handleDecimalButton(currentInput, button);
+      return handleDecimalButton(currentInput);
     }
   }
   switch (button.style) {
