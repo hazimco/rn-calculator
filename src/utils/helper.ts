@@ -73,6 +73,16 @@ const handleDeleteButton = (
   return updatedInput;
 };
 
+const handleEditCharacter = (
+  currentInput: string[],
+  selectedIndex: number,
+  buttonTitle: string
+) => {
+  let updatedInput = [...currentInput];
+  updatedInput[selectedIndex] = buttonTitle;
+  return updatedInput;
+};
+
 const getInputAfterButtonPress = (
   currentInput: string[],
   button: Button,
@@ -98,7 +108,11 @@ const getInputAfterButtonPress = (
   }
   switch (button.style) {
     case ButtonStyle.NUMBER: {
-      return [...currentInput, button.title];
+      if (selectedIndex === undefined) {
+        return [...currentInput, button.title];
+      }
+
+      return handleEditCharacter(currentInput, selectedIndex, button.title);
     }
     case ButtonStyle.OPERATOR: {
       return handleOperatorButton(currentInput, button);
