@@ -9,17 +9,17 @@ const isOperator = (character: string): boolean => {
   );
 };
 
-const handleOperatorButton = (currentInput: string[], button: Button) => {
+const handleOperatorButton = (currentInput: string[], buttonTitle: string) => {
   if (currentInput.length === 0) return currentInput;
 
   const lastInputCharacter = currentInput.at(-1) || "";
   if (lastInputCharacter === UNICODE.COMMA) {
-    return [...currentInput, "0", button.title];
+    return [...currentInput, "0", buttonTitle];
   }
   if (!isOperator(lastInputCharacter)) {
-    return [...currentInput, button.title]; //add operator if last character is not an operator
+    return [...currentInput, buttonTitle]; //add operator if last character is not an operator
   } else {
-    return currentInput.with(-1, button.title); //replace operator if last character is an operator
+    return currentInput.with(-1, buttonTitle); //replace operator if last character is an operator
   }
 };
 
@@ -115,7 +115,7 @@ const getInputAfterButtonPress = (
       return handleEditCharacter(currentInput, selectedIndex, button.title);
     }
     case ButtonStyle.OPERATOR: {
-      return handleOperatorButton(currentInput, button);
+      return handleOperatorButton(currentInput, button.title);
     }
     default:
       return currentInput;
