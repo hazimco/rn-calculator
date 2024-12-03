@@ -118,7 +118,10 @@ const getInputAfterButtonPress = (
       return handleEditCharacter(currentInput, selectedIndex, button.title);
     }
     case ButtonStyle.OPERATOR: {
-      return handleOperatorButton(currentInput, button.title);
+      if (selectedIndex === undefined) {
+        return handleOperatorButton(currentInput, button.title);
+      }
+      return handleEditCharacter(currentInput, selectedIndex, button.title);
     }
     default:
       return currentInput;
