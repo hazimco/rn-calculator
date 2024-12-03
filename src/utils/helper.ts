@@ -99,9 +99,6 @@ const getInputAfterButtonPress = (
     case UNICODE.PLUS_SLASH_MINUS: {
       return currentInput;
     }
-    case UNICODE.EQUALS_SIGN: {
-      return currentInput;
-    }
     case UNICODE.COMMA: {
       if (selectedIndex === undefined) {
         return handleDecimalButton(currentInput);

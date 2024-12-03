@@ -3,20 +3,27 @@ import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import InputArea from "./src/components/InputArea";
 import ButtonsArea from "./src/components/ButtonsArea";
 import { useRef, useState } from "react";
-import { Button } from "./src/types";
+import { Button, UNICODE } from "./src/types";
 import { getInputAfterButtonPress } from "./src/utils/helper";
 import ResultArea from "./src/components/ResultArea";
 
 export default function App() {
   const [input, setInput] = useState<string[]>([]);
   const [selectedIndex, setSelectedIndex] = useState<number>();
+  const [showResult, setShowResult] = useState(false);
 
   const scrollViewRef = useRef<ScrollView>(null);
 
   const handlePress = (button: Button) => {
+    if (button.title === UNICODE.EQUALS_SIGN) {
+      setShowResult(true);
+      return;
+    }
+
     setInput(
       getInputAfterButtonPress(input, button, selectedIndex, setSelectedIndex)
     );
+    setShowResult(false);
   };
 
   return (
@@ -33,7 +40,7 @@ export default function App() {
           setSelectedIndex={setSelectedIndex}
         />
       </ScrollView>
-      <ResultArea input={input} />
+      {showResult && <ResultArea input={input} />}
       <ButtonsArea onPress={handlePress} />
       <StatusBar style="light" />
     </SafeAreaView>
