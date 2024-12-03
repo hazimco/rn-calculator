@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     alignItems: "flex-end",
+    paddingVertical: 10,
+    borderTopColor: "gray",
+    borderTopWidth: 0.5,
   },
   text: {
     fontSize: 36,
