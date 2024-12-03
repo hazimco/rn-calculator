@@ -78,9 +78,7 @@ const handleEditCharacter = (
   selectedIndex: number,
   buttonTitle: string
 ) => {
-  let updatedInput = [...currentInput];
-  updatedInput[selectedIndex] = buttonTitle;
-  return updatedInput;
+  return currentInput.with(selectedIndex, buttonTitle);
 };
 
 const getInputAfterButtonPress = (
