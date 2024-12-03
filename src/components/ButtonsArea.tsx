@@ -41,9 +41,6 @@ const allRows = [firstRow, secondRow, thirdRow, fourthRow, fifthRow];
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 20,
-
-    borderWidth: 1,
-    borderColor: "pink",
   },
 });
 

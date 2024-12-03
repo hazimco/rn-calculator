@@ -6,8 +6,6 @@ const mexp = new Mexp();
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "blue",
     display: "flex",
     alignItems: "flex-end",
   },

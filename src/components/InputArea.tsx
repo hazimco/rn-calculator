@@ -6,9 +6,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     color: "white",
-
-    borderWidth: 1,
-    borderColor: "red",
   },
   text: {
     color: "white",
