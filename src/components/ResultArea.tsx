@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderTopColor: "gray",
     borderTopWidth: 0.5,
+    marginHorizontal: 10,
   },
   text: {
     fontSize: 36,
