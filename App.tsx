@@ -5,6 +5,7 @@ import ButtonsArea from "./src/components/ButtonsArea";
 import { useRef, useState } from "react";
 import { Button } from "./src/types";
 import { getInputAfterButtonPress } from "./src/utils/helper";
+import ResultArea from "./src/components/ResultArea";
 
 export default function App() {
   const [input, setInput] = useState<string[]>([]);
@@ -32,6 +33,7 @@ export default function App() {
           setSelectedIndex={setSelectedIndex}
         />
       </ScrollView>
+      <ResultArea input={input} />
       <ButtonsArea onPress={handlePress} />
       <StatusBar style="light" />
     </SafeAreaView>
