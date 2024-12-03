@@ -24,8 +24,27 @@ interface Props {
 const ResultArea = ({ input }: Props) => {
   let result: string;
 
+  const inputWithNonUnicodeOperators = input.map((character) => {
+    switch (character) {
+      case UNICODE.DIVISION_SIGN:
+        return "/";
+      case UNICODE.MULTIPLICATION_SIGN:
+        return "*";
+      case UNICODE.MINUS_SIGN:
+        return "-";
+      case UNICODE.PLUS_SIGN:
+        return "+";
+      case UNICODE.COMMA:
+        return ".";
+      default:
+        return character;
+    }
+  });
+
+  console.log(inputWithNonUnicodeOperators);
+
   try {
-    result = mexp.eval(input.join("")).toString();
+    result = mexp.eval(inputWithNonUnicodeOperators.join("")).toString();
   } catch (error: unknown) {
     if (error instanceof Error) {
       result = error.message;
