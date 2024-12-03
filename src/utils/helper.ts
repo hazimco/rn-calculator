@@ -64,7 +64,8 @@ const handleDeleteButton = (
 
   let updatedInput = currentInput.filter((_, index) => {
     if (index === selectedIndex) {
-      setSelectedIndex(selectedIndex - 1);
+      const newIndex = selectedIndex - 1;
+      setSelectedIndex(newIndex >= 0 ? newIndex : undefined);
       return false;
     }
     return true;
@@ -89,6 +90,7 @@ const getInputAfterButtonPress = (
 ) => {
   switch (button.title) {
     case "AC": {
+      setSelectedIndex(undefined);
       return [];
     }
     case UNICODE.ERASE_TO_THE_LEFT: {
