@@ -103,7 +103,10 @@ const getInputAfterButtonPress = (
       return currentInput;
     }
     case UNICODE.COMMA: {
-      return handleDecimalButton(currentInput);
+      if (selectedIndex === undefined) {
+        return handleDecimalButton(currentInput);
+      }
+      return handleEditCharacter(currentInput, selectedIndex, UNICODE.COMMA);
     }
   }
   switch (button.style) {
